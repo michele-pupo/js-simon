@@ -18,4 +18,7 @@ console.log(now);
 const chosenDate = new Date('2024-02-12T09:30:00');
 console.log(chosenDate);
   
-    
+// creiamo una variabile che sottragga alla data scelta l'ora attuale
+let remainingTime = chosenDate.getTime() - now.getTime();
+// questo ci darà il tempo (in numero) che manca alla data indicata in "millisecondi"
+console.log(remainingTime);
