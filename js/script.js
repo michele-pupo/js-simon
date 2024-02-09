@@ -12,6 +12,7 @@
 
 // creiamo una funzione che aggiorni il timer ogni secondo
 function missingTime(){
+
     // creiamo una variabile che ci dia l'ora esatta in questo momento tramite una stringa
     const now = new Date();
     // console.log(now);
@@ -24,7 +25,6 @@ function missingTime(){
     let remainingTime = chosenDate.getTime() - now.getTime();
     // questo ci darà il tempo (in numero) che manca alla data indicata in "millisecondi"
     // console.log(remainingTime);
-
 
     // facciamo la conversione dai millisecondi ottenuti per trovare quanti giorni, ore, minuti e secondi mancano
     // conversione in secondi mancanti
@@ -47,15 +47,19 @@ function missingTime(){
     setTimeout(missingTime, 1000);
 
     // stampiamo in pagina il conto alla rovescia
+    // stampiamo i giorni rimanenti
     const remainingTimerDaysElement = document.getElementById("timer-days");
     remainingTimerDaysElement.innerHTML = `${days} giorni`;
 
+    // stampiamo le ore rimanenti
     const remainingTimerHoursElement = document.getElementById("timer-hours");
     remainingTimerHoursElement.innerHTML = `${hours} ore`;
 
+    // stampiamo i minuti rimanenti
     const remainingTimerMinutesElement = document.getElementById("timer-minutes");
     remainingTimerMinutesElement.innerHTML = `${minutes} minuti`;
 
+    // stampiamo i secondi rimanenti
     const remainingTimerSecondsElement = document.getElementById("timer-seconds");
     remainingTimerSecondsElement.innerHTML = `${seconds} secondi`;
 }
