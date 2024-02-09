@@ -29,22 +29,35 @@ function missingTime(){
     // facciamo la conversione dai millisecondi ottenuti per trovare quanti giorni, ore, minuti e secondi mancano
     // conversione in secondi mancanti
     const seconds = Math.floor((remainingTime / 1000) % 60);
-    console.log(seconds);
+    // console.log(seconds);
 
     // conversione in minuti mancanti
     const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
-    console.log(minutes);
+    // console.log(minutes);
 
     // conversione in ore mancanti
     const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-    console.log(hours);
+    // console.log(hours);
 
     // conversione in giorni mancanti
     const days = Math.floor((remainingTime / (1000 * 60 * 60 * 24)));
-    console.log(days);
+    // console.log(days);
 
     // impostaiamo il metodo "setTimeout" che fa un conto alla rovescia ed impostandogli il valore 1000ms scalerà un secondo alla volta
     setTimeout(missingTime, 1000);
+
+    // stampiamo in pagina il conto alla rovescia
+    const remainingTimerDaysElement = document.getElementById("timer-days");
+    remainingTimerDaysElement.innerHTML = `${days} giorni`;
+
+    const remainingTimerHoursElement = document.getElementById("timer-hours");
+    remainingTimerHoursElement.innerHTML = `${hours} ore`;
+
+    const remainingTimerMinutesElement = document.getElementById("timer-minutes");
+    remainingTimerMinutesElement.innerHTML = `${minutes} minuti`;
+
+    const remainingTimerSecondsElement = document.getElementById("timer-seconds");
+    remainingTimerSecondsElement.innerHTML = `${seconds} secondi`;
 }
 
 // richiamando la funzione si aggiornerà il timer
