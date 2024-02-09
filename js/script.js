@@ -12,13 +12,31 @@
 
 // creiamo una variabile che ci dia l'ora esatta in questo momento tramite una stringa
 const now = new Date();
-console.log(now);
+// console.log(now);
 
 // creiamo una variabile con l'ora ed il giorno scelto da noi
 const chosenDate = new Date('2024-02-12T09:30:00');
-console.log(chosenDate);
+// console.log(chosenDate);
   
 // creiamo una variabile che sottragga alla data scelta l'ora attuale
 let remainingTime = chosenDate.getTime() - now.getTime();
 // questo ci darà il tempo (in numero) che manca alla data indicata in "millisecondi"
-console.log(remainingTime);
+// console.log(remainingTime);
+
+
+// facciamo la conversione dai millisecondi ottenuti per trovare quanti giorni, ore, minuti e secondi mancano
+// conversione in secondi mancanti
+const seconds = Math.floor((remainingTime / 1000) % 60);
+console.log(seconds);
+
+// conversione in minuti mancanti
+const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+console.log(minutes);
+
+// conversione in ore mancanti
+const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+console.log(hours);
+
+// conversione in giorni mancanti
+const days = Math.floor((remainingTime / (1000 * 60 * 60 * 24)));
+console.log(days);
