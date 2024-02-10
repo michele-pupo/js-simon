@@ -44,7 +44,7 @@ function missingTime(){
     // console.log(days);
 
     // impostaiamo il metodo "setTimeout" che fa un conto alla rovescia ed impostandogli il valore 1000ms scalerà un secondo alla volta
-    setTimeout(missingTime, 1000);
+    timeoutID = setTimeout(missingTime, 1000);
 
     // stampiamo in pagina il conto alla rovescia
     // stampiamo i giorni rimanenti
@@ -77,6 +77,17 @@ function missingTime(){
     remainingTimerSecondsElement.innerHTML = `${seconds} secondi`;
     if(seconds == 1){
         remainingTimerSecondsElement.innerHTML = `${seconds} secondo`;
+    }
+
+    // azzeriamo il timer quando il tempo è scaduto
+    if(remainingTime <= 0) {
+        // usiamo "clear" per azzerare il conteggio
+        clearTimeout(timeoutID);
+        remainingTimerDaysElement.innerHTML = `00 giorni`;
+        remainingTimerHoursElement.innerHTML = `00 ore`;
+        remainingTimerMinutesElement.innerHTML = `00 minuti`;
+        remainingTimerSecondsElement.innerHTML = `00 secondi`;
+        document.querySelector("#timer-out").innerText = `tempo scaduto`;
     }
 }
 

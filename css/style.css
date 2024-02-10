@@ -6,3 +6,22 @@ body{
     width: 1000px;
     margin-top: 150px;
 }
+
+#timer-out{
+    animation: timeout 2s ease infinite;
+}
+
+@keyframes timeout {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
