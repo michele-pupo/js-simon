@@ -49,19 +49,35 @@ function missingTime(){
     // stampiamo in pagina il conto alla rovescia
     // stampiamo i giorni rimanenti
     const remainingTimerDaysElement = document.getElementById("timer-days");
+    // se i giorni rimanenti sono pari ad 1, cambio dicitura in pagina
     remainingTimerDaysElement.innerHTML = `${days} giorni`;
+    if(days == 1){
+        remainingTimerDaysElement.innerHTML = `${days} giorno`;
+    }
 
     // stampiamo le ore rimanenti
     const remainingTimerHoursElement = document.getElementById("timer-hours");
+    // se le ore rimanenti sono pari ad 1, cambio dicitura in pagina
     remainingTimerHoursElement.innerHTML = `${hours} ore`;
+    if(hours == 1){
+        remainingTimerHoursElement.innerHTML = `${days} ora`;
+    }
 
     // stampiamo i minuti rimanenti
     const remainingTimerMinutesElement = document.getElementById("timer-minutes");
+    // se i minuti rimanenti sono pari ad 1, cambio dicitura in pagina
     remainingTimerMinutesElement.innerHTML = `${minutes} minuti`;
+    if(minutes == 1){
+        remainingTimerMinutesElement.innerHTML = `${minutes} minuto`;
+    }
 
     // stampiamo i secondi rimanenti
     const remainingTimerSecondsElement = document.getElementById("timer-seconds");
+    // se i secondi rimanenti sono pari ad 1, cambio dicitura in pagina
     remainingTimerSecondsElement.innerHTML = `${seconds} secondi`;
+    if(seconds == 1){
+        remainingTimerSecondsElement.innerHTML = `${seconds} secondo`;
+    }
 }
 
 // richiamando la funzione si aggiornerà il timer
