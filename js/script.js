@@ -60,7 +60,7 @@ function missingTime(){
     // se le ore rimanenti sono pari ad 1, cambio dicitura in pagina
     remainingTimerHoursElement.innerHTML = `${hours} ore`;
     if(hours == 1){
-        remainingTimerHoursElement.innerHTML = `${days} ora`;
+        remainingTimerHoursElement.innerHTML = `${hours} ora`;
     }
 
     // stampiamo i minuti rimanenti
